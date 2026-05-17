@@ -84,12 +84,6 @@ I'm a Computer Science student based in Cairo, Egypt, passionate about systems p
 
 ---
 
-##  GitHub Stats
-
-![Mohamed's GitHub stats](https://github-readme-stats.vercel.app/api?username=moataz440&show_icons=true&hide_border=true&theme=default)
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=moataz440&layout=compact&hide_border=true&theme=default)
-
----
 
 ##  Let's connect
 
