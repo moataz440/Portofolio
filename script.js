@@ -480,32 +480,70 @@ function applyTilt(card, e) {
 })();
 
 /* ============================================================
-   CONTACT FORM
+   CONTACT FORM  — EmailJS
    ============================================================ */
 (function initForm() {
+  const EMAILJS_PUBLIC_KEY  = 'YOUR_PUBLIC_KEY';
+  const EMAILJS_SERVICE_ID  = 'YOUR_SERVICE_ID';
+  const EMAILJS_TEMPLATE_ID = 'YOUR_TEMPLATE_ID';
+
+  emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+
   const form = document.getElementById('contact-form');
   if (!form) return;
 
-  form.addEventListener('submit', e => {
+  form.addEventListener('submit', async e => {
     e.preventDefault();
+
     const btn  = form.querySelector('button[type="submit"]');
     const span = btn.querySelector('span');
     const orig = span.textContent;
 
+    const name    = document.getElementById('f-name').value.trim();
+    const email   = document.getElementById('f-email').value.trim();
+    const subject = document.getElementById('f-subject').value.trim();
+    const message = document.getElementById('f-msg').value.trim();
+
+    // Basic email format check
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      document.getElementById('f-email').setCustomValidity('Please enter a valid email address.');
+      document.getElementById('f-email').reportValidity();
+      return;
+    }
+    document.getElementById('f-email').setCustomValidity('');
+
     span.textContent = 'Sending...';
     btn.disabled = true;
 
-    // Simulate sending (replace with actual EmailJS or backend call)
-    setTimeout(() => {
-      span.textContent = 'Message Sent!';
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        from_name:    name,
+        from_email:   email,
+        subject:      subject,
+        message:      message,
+        reply_to:     email,
+        to_email:     'mohamedmoataz726@gmail.com',
+      });
+
+      span.textContent = 'Message Sent ✓';
       btn.style.background = 'linear-gradient(135deg, #16a34a, #22c55e)';
+      form.reset();
       setTimeout(() => {
         span.textContent = orig;
         btn.style.background = '';
         btn.disabled = false;
-        form.reset();
-      }, 3000);
-    }, 1200);
+      }, 3500);
+
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      span.textContent = 'Failed — try again';
+      btn.style.background = 'linear-gradient(135deg, #dc2626, #ef4444)';
+      setTimeout(() => {
+        span.textContent = orig;
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 3500);
+    }
   });
 })();
 
