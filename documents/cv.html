@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Moataz — Curriculum Vitae</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:   #c9a84c;
+      --gold-lt: #e8c97a;
+      --black:  #111111;
+      --grey:   #555555;
+      --grey2:  #888888;
+      --light:  #f8f8f8;
+      --border: #e5e5e5;
+      --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Space Grotesk', system-ui, sans-serif;
+      --mono:   'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 10.5pt;
+      line-height: 1.6;
+      color: var(--black);
+      background: #fff;
+    }
+
+    a { color: var(--gold); text-decoration: none; }
+
+    /* Page layout */
+    .page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 48px 56px;
+    }
+
+    /* Header */
+    header { margin-bottom: 32px; padding-bottom: 28px; border-bottom: 2px solid var(--gold); }
+
+    .name {
+      font-family: var(--serif);
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.01em;
+      line-height: 1.1;
+      margin-bottom: 4px;
+    }
+
+    .name span {
+      background: linear-gradient(135deg, #9a7535, var(--gold), var(--gold-lt));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .title-line {
+      font-size: 1rem;
+      color: var(--grey);
+      font-weight: 400;
+      margin-bottom: 20px;
+      letter-spacing: 0.04em;
+    }
+
+    .contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .contact-bar span, .contact-bar a {
+      font-family: var(--mono);
+      font-size: 0.75rem;
+      color: var(--grey2);
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .contact-bar a { color: var(--grey2); }
+    .contact-bar a:hover { color: var(--gold); }
+
+    /* Two-column layout */
+    .columns { display: grid; grid-template-columns: 1fr 240px; gap: 40px; }
+
+    /* Section */
+    .sec { margin-bottom: 28px; }
+
+    .sec-title {
+      font-family: var(--serif);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--black);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding-bottom: 6px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 16px;
+    }
+
+    .sec-title span { color: var(--gold); }
+
+    /* Summary */
+    .summary {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      color: var(--grey);
+    }
+
+    /* Experience / Projects */
+    .entry { margin-bottom: 20px; }
+
+    .entry-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 3px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .entry-title {
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: var(--black);
+    }
+
+    .entry-date {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--grey2);
+    }
+
+    .entry-org {
+      font-size: 0.82rem;
+      color: var(--gold);
+      margin-bottom: 6px;
+    }
+
+    .entry ul {
+      padding-left: 16px;
+    }
+
+    .entry li {
+      font-size: 0.88rem;
+      color: var(--grey);
+      margin-bottom: 3px;
+      line-height: 1.6;
+    }
+
+    .entry li::marker { color: var(--gold); }
+
+    /* Tag list */
+    .tag-list { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.65rem;
+      color: var(--grey2);
+      background: var(--light);
+      border: 1px solid var(--border);
+      padding: 2px 8px;
+      border-radius: 2px;
+    }
+
+    /* Sidebar */
+    .sidebar { }
+
+    .sidebar .sec-title { font-size: 0.85rem; }
+
+    .skill-group { margin-bottom: 16px; }
+
+    .skill-group-name {
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gold);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .skill-group .tag { margin: 2px 2px 2px 0; }
+
+    /* Education */
+    .edu-title {
+      font-weight: 600;
+      font-size: 0.9rem;
+      color: var(--black);
+      margin-bottom: 2px;
+    }
+
+    .edu-school {
+      font-size: 0.8rem;
+      color: var(--gold);
+      margin-bottom: 2px;
+    }
+
+    .edu-date {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--grey2);
+    }
+
+    .divider { height: 1px; background: var(--border); margin: 8px 0; }
+
+    /* Print */
+    @media print {
+      body { font-size: 9.5pt; }
+      .page { padding: 20px 30px; max-width: none; }
+      header { padding-bottom: 18px; margin-bottom: 20px; }
+      .name { font-size: 2.2rem; }
+      a { color: var(--grey2) !important; -webkit-print-color-adjust: exact; }
+    }
+
+    @page { size: A4; margin: 1cm 1.5cm; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <header>
+    <div class="name">Mohamed <span>Moataz</span></div>
+    <div class="title-line">Full-Stack Engineer &nbsp;·&nbsp; AI Developer &nbsp;·&nbsp; Systems Architect</div>
+    <div class="contact-bar">
+      <a href="mailto:mohamedmoataz726@gmail.com">mohamedmoataz726@gmail.com</a>
+      <a href="tel:+201550286055">+20 155 028 6055</a>
+      <a href="https://wa.me/201018343533" target="_blank">WhatsApp: +20 101 834 3533</a>
+      <a href="https://github.com/moataz440" target="_blank">github.com/moataz440</a>
+      <a href="https://www.linkedin.com/in/mohamed-moataz-337780228/" target="_blank">linkedin.com/in/mohamed-moataz-337780228</a>
+    </div>
+  </header>
+
+  <div class="columns">
+    <!-- MAIN COLUMN -->
+    <div class="main">
+
+      <!-- PROFILE SUMMARY -->
+      <div class="sec">
+        <div class="sec-title">Profile <span>—</span></div>
+        <p class="summary">
+          Multidisciplinary software engineer with a strong command of full-stack web development, AI/ML systems,
+          low-level compiler engineering, and embedded hardware. I've shipped production-grade applications across
+          diverse domains — from AES-256 encrypted image security systems and real-time collaborative platforms
+          to custom-built 3D printers and C language compilers with full AST interpretation. Driven by the belief
+          that the best engineers break domain walls rather than build them.
+        </p>
+      </div>
+
+      <!-- FEATURED PROJECTS -->
+      <div class="sec">
+        <div class="sec-title">Selected Projects <span>—</span></div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">LRC — C++ Frontend Compiler with AST Interpreter</span>
+            <span class="entry-date">2024 – 2025</span>
+          </div>
+          <div class="entry-org">Systems Programming &amp; Compiler Engineering</div>
+          <ul>
+            <li>Complete C++ compiler: preprocessing, lexical analysis, LR(1) parsing, semantic analysis, TAC generation, pseudo-assembly, HTE object code</li>
+            <li>Tree-walking AST interpreter with a CustomTkinter GUI visualizing every phase — tokens, AST, parse tree, symbol table, TAC, and assembly</li>
+            <li>Full error reporting at every stage with precise line/column information</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">LR(1) Parsing</span><span class="tag">AST</span>
+            <span class="tag">Compiler Design</span><span class="tag">CustomTkinter</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">1980 Coffee — Full-Stack Ordering Platform</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">Production Web Application &nbsp;|&nbsp; Live: coffee-1980.vercel.app</div>
+          <ul>
+            <li>Full ordering system, real-time order management, loyalty points, and admin dashboard</li>
+            <li>Stripe card payments, MongoDB Atlas, JWT refresh-token rotation via httpOnly cookies with reuse detection</li>
+            <li>bcrypt hashing, rate limiting, Helmet security headers, Joi input validation, audit logs</li>
+            <li>Python analytics dashboard for KPIs and revenue charts; demo mode works with zero setup</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB Atlas</span>
+            <span class="tag">JWT</span><span class="tag">Stripe</span><span class="tag">Python</span><span class="tag">Mongoose</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">CB350 QuizHub — AI-Powered University Quiz Platform</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">Real-World Use &amp; AI Integration &nbsp;|&nbsp; Live: building-materials-six.vercel.app</div>
+          <ul>
+            <li>Used by actual AAST professors and students for CB350 Building Materials &amp; Testing course</li>
+            <li>Tutors generate AI-powered questions per topic via Claude proxy, share a 6-character room code</li>
+            <li>Live sessions with countdown timer, real-time bar charts, speed-based bonus scoring, and leaderboard</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">React</span><span class="tag">Vite</span><span class="tag">Supabase Realtime</span>
+            <span class="tag">Claude AI</span><span class="tag">JavaScript</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">FaceSecure — Enterprise Face Recognition System</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">AI · Computer Vision &amp; Desktop Development</div>
+          <ul>
+            <li>ONNX-based face detection and recognition models with real-time live camera feed</li>
+            <li>Admin panel with access control, SQLite employee records, automated report generation</li>
+            <li>PyInstaller-packaged executable for enterprise attendance tracking and access control</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">ONNX</span><span class="tag">OpenCV</span>
+            <span class="tag">CustomTkinter</span><span class="tag">SQLite</span><span class="tag">PyInstaller</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">CipherLens — Encrypted Image Steganography Tool</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">Cybersecurity &amp; Web Development</div>
+          <ul>
+            <li>AES-256-GCM encrypted messages hidden inside images using LSB steganography</li>
+            <li>PBKDF2-HMAC-SHA256 key derivation, EXIF metadata stripping, XOR fallback cipher</li>
+            <li>Flask API backend with drag-and-drop frontend, file validation, and capacity checking</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">AES-256-GCM</span>
+            <span class="tag">LSB Steganography</span><span class="tag">PyCryptodome</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Custom 3D Printer — Hardware + Firmware</span>
+            <span class="entry-date">2023</span>
+          </div>
+          <div class="entry-org">Embedded Systems &amp; Hardware Engineering</div>
+          <ul>
+            <li>Assembled complete 3D printer from mechanical components, circuit design, and motor driver electronics</li>
+            <li>Wrote custom Arduino firmware for G-code parsing, stepper motor control, and thermal management</li>
+            <li>Python host-side communication scripts; calibrated motion system to ±0.1mm accuracy</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Arduino</span><span class="tag">C++</span><span class="tag">Python</span>
+            <span class="tag">G-code</span><span class="tag">Embedded Systems</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Car Dealership Platform</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">Full-Stack Web Development</div>
+          <ul>
+            <li>Next.js frontend with Node.js/Express backend; real-time auction and bidding, role-based JWT auth</li>
+            <li>MySQL schema managed with Prisma ORM; listing management, lead capture, admin dashboard</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Next.js</span><span class="tag">TypeScript</span><span class="tag">Tailwind</span>
+            <span class="tag">Node.js</span><span class="tag">MySQL</span><span class="tag">Prisma</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">Beauty Salon Management System</span>
+            <span class="entry-date">2024</span>
+          </div>
+          <div class="entry-org">Desktop Application &amp; Database Engineering</div>
+          <ul>
+            <li>Full appointment scheduling, staff management, service tracking, and client visit history</li>
+            <li>Java 17 + JavaFX FXML in clean MVC architecture, connected to MySQL via JDBC</li>
+          </ul>
+          <div class="tag-list">
+            <span class="tag">Java 17</span><span class="tag">JavaFX</span><span class="tag">FXML</span>
+            <span class="tag">MySQL</span><span class="tag">JDBC</span><span class="tag">Maven</span>
+          </div>
+        </div>
+
+        <div class="entry">
+          <div class="entry-header">
+            <span class="entry-title">E-Commerce System (C# .NET 8) · IoT Weather Station · Collaborative Whiteboard · Rotten Tomatoes Analytics · Online Exam System</span>
+            <span class="entry-date">2023–2025</span>
+          </div>
+          <div class="entry-org">C# / Design Patterns &nbsp;·&nbsp; ESP32 / MQTT &nbsp;·&nbsp; React / WebSockets &nbsp;·&nbsp; Python EDA &nbsp;·&nbsp; PHP / MySQL</div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- SIDEBAR COLUMN -->
+    <div class="sidebar">
+
+      <!-- EDUCATION -->
+      <div class="sec">
+        <div class="sec-title">Education <span>—</span></div>
+        <div class="edu-title">B.Sc. Computer Engineering</div>
+        <div class="edu-school">Arab Academy for Science, Technology &amp; Maritime Transport (AAST) — Egypt</div>
+        <div class="edu-date">2022 – 2027 (Expected)</div>
+        <div class="divider"></div>
+        <p style="font-size:0.8rem; color:var(--grey); margin-top:6px;">Coursework: Data Structures &amp; Algorithms, Compilers, Operating Systems, Database Systems, Computer Networks, AI Fundamentals</p>
+      </div>
+
+      <!-- LANGUAGES -->
+      <div class="sec">
+        <div class="sec-title">Languages <span>—</span></div>
+        <div class="entry">
+          <div class="entry-header"><span style="font-size:0.85rem; font-weight:600;">Arabic</span><span class="entry-date">Native</span></div>
+          <div class="entry-header" style="margin-top:6px;"><span style="font-size:0.85rem; font-weight:600;">English</span><span class="entry-date">Professional</span></div>
+        </div>
+      </div>
+
+      <!-- SKILLS -->
+      <div class="sec">
+        <div class="sec-title">Skills <span>—</span></div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Languages</div>
+          <div class="tag-list">
+            <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+            <span class="tag">Java</span><span class="tag">C / C++</span><span class="tag">C#</span>
+            <span class="tag">PHP</span><span class="tag">SQL</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Frontend</div>
+          <div class="tag-list">
+            <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind CSS</span>
+            <span class="tag">Vite</span><span class="tag">JavaFX</span><span class="tag">CustomTkinter</span>
+            <span class="tag">Bootstrap</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Backend</div>
+          <div class="tag-list">
+            <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Flask</span>
+            <span class="tag">FastAPI</span><span class="tag">JWT Auth</span><span class="tag">Stripe</span>
+            <span class="tag">Helmet</span><span class="tag">Joi</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Databases</div>
+          <div class="tag-list">
+            <span class="tag">MongoDB Atlas</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+            <span class="tag">Supabase</span><span class="tag">SQLite</span><span class="tag">Prisma ORM</span>
+            <span class="tag">Mongoose</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">AI / ML</div>
+          <div class="tag-list">
+            <span class="tag">OpenCV</span><span class="tag">ONNX</span>
+            <span class="tag">Computer Vision</span><span class="tag">LLM Integration</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Security</div>
+          <div class="tag-list">
+            <span class="tag">AES-256-GCM</span><span class="tag">LSB Steganography</span>
+            <span class="tag">PBKDF2</span><span class="tag">Rate Limiting</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Systems / Hardware</div>
+          <div class="tag-list">
+            <span class="tag">Compiler Design</span><span class="tag">LR(1) Parsing</span>
+            <span class="tag">AST</span><span class="tag">Arduino</span><span class="tag">ESP32</span>
+            <span class="tag">IoT / MQTT</span><span class="tag">Embedded Systems</span>
+          </div>
+        </div>
+
+        <div class="skill-group">
+          <div class="skill-group-name">Tools</div>
+          <div class="tag-list">
+            <span class="tag">Git</span><span class="tag">Vercel</span><span class="tag">Maven</span>
+            <span class="tag">PyInstaller</span><span class="tag">Postman</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

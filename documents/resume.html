@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mohamed Moataz — Résumé</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --gold:   #c9a84c;
+      --gold-dk:#9a7535;
+      --black:  #111111;
+      --grey:   #555555;
+      --grey2:  #888888;
+      --border: #e5e5e5;
+      --serif:  'Playfair Display', Georgia, serif;
+      --sans:   'Space Grotesk', system-ui, sans-serif;
+      --mono:   'JetBrains Mono', 'Courier New', monospace;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--sans);
+      font-size: 9.5pt;
+      line-height: 1.55;
+      color: var(--black);
+      background: #fff;
+    }
+
+    a { color: var(--grey2); text-decoration: none; }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 36px 48px;
+    }
+
+    /* --- Header --- */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      padding-bottom: 14px;
+      border-bottom: 2px solid var(--gold);
+      margin-bottom: 22px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .name {
+      font-family: var(--serif);
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--black);
+      line-height: 1;
+    }
+
+    .name span { color: var(--gold); }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .header-right .role {
+      font-size: 0.8rem;
+      color: var(--grey);
+      font-weight: 500;
+      letter-spacing: 0.04em;
+      margin-bottom: 6px;
+    }
+
+    .contacts { display: flex; flex-direction: column; align-items: flex-end; gap: 2px; }
+
+    .contacts a, .contacts span {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--grey2);
+    }
+
+    /* --- Two-column main layout --- */
+    .body { display: grid; grid-template-columns: 1fr 195px; gap: 28px; }
+
+    /* --- Section --- */
+    .sec { margin-bottom: 18px; }
+
+    .sec-h {
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 10px;
+    }
+
+    /* --- Entry --- */
+    .ent { margin-bottom: 12px; }
+
+    .ent-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 1px;
+    }
+
+    .ent-title { font-weight: 600; font-size: 0.85rem; color: var(--black); }
+    .ent-date  { font-family: var(--mono); font-size: 0.65rem; color: var(--grey2); white-space: nowrap; }
+    .ent-org   { font-size: 0.75rem; color: var(--gold-dk); margin-bottom: 4px; }
+
+    .ent ul { padding-left: 12px; }
+    .ent li { font-size: 0.8rem; color: var(--grey); margin-bottom: 2px; }
+    .ent li::marker { color: var(--gold); }
+
+    /* --- Sidebar --- */
+    .sidebar {}
+    .sidebar .sec-h { font-size: 0.6rem; }
+
+    .tag-row { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 8px; }
+
+    .tag {
+      font-family: var(--mono);
+      font-size: 0.6rem;
+      color: var(--grey2);
+      background: #f4f4f4;
+      border: 1px solid var(--border);
+      padding: 2px 7px;
+      border-radius: 2px;
+    }
+
+    .sk-cat { font-size: 0.62rem; font-weight: 600; color: var(--grey); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 4px; margin-top: 8px; }
+
+    .edu-name { font-weight: 600; font-size: 0.82rem; }
+    .edu-sub  { font-size: 0.75rem; color: var(--gold-dk); }
+    .edu-date { font-family: var(--mono); font-size: 0.65rem; color: var(--grey2); }
+
+    /* Print */
+    @media print {
+      .page { padding: 16px 24px; max-width: none; }
+    }
+    @page { size: A4; margin: 0.8cm 1.2cm; }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <header>
+    <div class="name">Mohamed <span>Moataz</span></div>
+    <div class="header-right">
+      <div class="role">Full-Stack Engineer &nbsp;·&nbsp; AI Developer &nbsp;·&nbsp; Systems Architect</div>
+      <div class="contacts">
+        <a href="mailto:mohamedmoataz726@gmail.com">mohamedmoataz726@gmail.com</a>
+        <a href="tel:+201550286055">+20 155 028 6055</a>
+        <a href="https://wa.me/201018343533" target="_blank">WhatsApp: +20 101 834 3533</a>
+        <a href="https://github.com/moataz440" target="_blank">github.com/moataz440</a>
+        <a href="https://www.linkedin.com/in/mohamed-moataz-337780228/" target="_blank">linkedin.com/in/mohamed-moataz-337780228</a>
+      </div>
+    </div>
+  </header>
+
+  <div class="body">
+    <div class="main">
+
+      <!-- SUMMARY -->
+      <div class="sec">
+        <div class="sec-h">Summary</div>
+        <p style="font-size:0.82rem; color:var(--grey); line-height:1.65;">
+          Multidisciplinary software engineer specializing in full-stack web development, AI/ML systems, compiler engineering,
+          and embedded hardware. Delivered production applications from AES-256 encrypted image platforms and real-time
+          collaborative tools to C compilers with AST interpretation and custom-built 3D printers.
+        </p>
+      </div>
+
+      <!-- PROJECTS -->
+      <div class="sec">
+        <div class="sec-h">Projects</div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">LRC — C++ Frontend Compiler with AST Interpreter</span>
+            <span class="ent-date">2024–2025</span>
+          </div>
+          <div class="ent-org">Systems · Compiler Engineering &nbsp;|&nbsp; Python, LR(1) Parsing, CustomTkinter</div>
+          <ul>
+            <li>Complete C++ compiler: lexer, LR(1) parser, semantic analysis, TAC generation, pseudo-ASM, object code</li>
+            <li>Tree-walking AST interpreter with a GUI visualizing every phase — tokens, AST, symbol table, TAC, assembly</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">1980 Coffee — Full-Stack Ordering Platform</span>
+            <span class="ent-date">2024</span>
+          </div>
+          <div class="ent-org">Production Web App &nbsp;|&nbsp; Node.js, Express, MongoDB Atlas, Stripe</div>
+          <ul>
+            <li>Stripe payments, JWT refresh-token rotation via httpOnly cookies, bcrypt hashing, rate limiting, audit logs</li>
+            <li>Python analytics dashboard for KPIs; live on Vercel: coffee-1980.vercel.app</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">CB350 QuizHub — AI University Quiz Platform</span>
+            <span class="ent-date">2024</span>
+          </div>
+          <div class="ent-org">Real-World Use · AI &nbsp;|&nbsp; React, Vite, Supabase Realtime, Claude AI</div>
+          <ul>
+            <li>Used by actual AAST professors and students; AI-generated questions, live sessions, speed-based leaderboard</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">FaceSecure — Enterprise Face Recognition System</span>
+            <span class="ent-date">2024</span>
+          </div>
+          <div class="ent-org">AI · Security &nbsp;|&nbsp; Python, ONNX, OpenCV, CustomTkinter, SQLite</div>
+          <ul>
+            <li>ONNX-based real-time face detection; admin panel, employee DB, automated reports, PyInstaller executable</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">CipherLens — Encrypted Image Steganography Tool</span>
+            <span class="ent-date">2024</span>
+          </div>
+          <div class="ent-org">Security &nbsp;|&nbsp; Python, Flask, AES-256-GCM, LSB Steganography</div>
+          <ul>
+            <li>AES-256-GCM + XOR encryption, PBKDF2 key derivation, EXIF stripping, rate limiting, drag-and-drop UI</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">Custom 3D Printer — Hardware + Firmware</span>
+            <span class="ent-date">2023</span>
+          </div>
+          <div class="ent-org">Hardware · Embedded &nbsp;|&nbsp; Arduino, C++, G-code, Python</div>
+          <ul>
+            <li>Built from scratch: hardware assembly, custom Arduino firmware, G-code interpreter, ±0.1mm calibration</li>
+          </ul>
+        </div>
+
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">Car Dealership · Beauty Salon · E-Commerce (C# .NET 8) · IoT Weather Station · Collaborative Whiteboard · Rotten Tomatoes Analytics · Online Exam System</span>
+            <span class="ent-date">2023–2025</span>
+          </div>
+          <div class="ent-org">Next.js / Prisma · Java 17 / JavaFX · Design Patterns · ESP32 / MQTT · React / WebSockets · Python EDA · PHP</div>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="sec">
+        <div class="sec-h">Education</div>
+        <div class="ent">
+          <div class="ent-row">
+            <span class="ent-title">B.Sc. Computer Engineering</span>
+            <span class="ent-date">2022 – 2027</span>
+          </div>
+          <div class="ent-org">Arab Academy for Science, Technology &amp; Maritime Transport (AAST) — Egypt</div>
+        </div>
+      </div>
+
+    </div><!-- /main -->
+
+    <div class="sidebar">
+
+      <div class="sec">
+        <div class="sec-h">Skills</div>
+
+        <div class="sk-cat">Languages</div>
+        <div class="tag-row">
+          <span class="tag">Python</span><span class="tag">JavaScript</span><span class="tag">TypeScript</span>
+          <span class="tag">Java</span><span class="tag">C / C++</span><span class="tag">C#</span>
+          <span class="tag">PHP</span><span class="tag">SQL</span>
+        </div>
+
+        <div class="sk-cat">Frontend</div>
+        <div class="tag-row">
+          <span class="tag">React</span><span class="tag">Next.js</span><span class="tag">Tailwind</span>
+          <span class="tag">Vite</span><span class="tag">JavaFX</span><span class="tag">CustomTkinter</span>
+        </div>
+
+        <div class="sk-cat">Backend</div>
+        <div class="tag-row">
+          <span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Flask</span>
+          <span class="tag">FastAPI</span><span class="tag">JWT Auth</span><span class="tag">Stripe</span>
+        </div>
+
+        <div class="sk-cat">Databases</div>
+        <div class="tag-row">
+          <span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">PostgreSQL</span>
+          <span class="tag">Supabase</span><span class="tag">Prisma</span><span class="tag">SQLite</span>
+        </div>
+
+        <div class="sk-cat">AI / Security</div>
+        <div class="tag-row">
+          <span class="tag">OpenCV</span><span class="tag">ONNX</span><span class="tag">LLM Integration</span>
+          <span class="tag">AES-256-GCM</span><span class="tag">Steganography</span>
+        </div>
+
+        <div class="sk-cat">Systems / HW</div>
+        <div class="tag-row">
+          <span class="tag">Compiler Design</span><span class="tag">LR(1)</span><span class="tag">AST</span>
+          <span class="tag">Arduino</span><span class="tag">ESP32</span><span class="tag">IoT/MQTT</span>
+        </div>
+
+        <div class="sk-cat">Tools</div>
+        <div class="tag-row">
+          <span class="tag">Git</span><span class="tag">Vercel</span><span class="tag">Maven</span>
+          <span class="tag">PyInstaller</span><span class="tag">Postman</span>
+        </div>
+      </div>
+
+      <div class="sec">
+        <div class="sec-h">Languages</div>
+        <div style="font-size:0.78rem; color:var(--grey);">Arabic — Native<br>English — Professional</div>
+      </div>
+
+    </div><!-- /sidebar -->
+  </div><!-- /body -->
+
+</div>
+</body>
+</html>
