@@ -1,27 +1,12 @@
 ﻿# Portfolio
 
-Personal portfolio website and documents for **Mohamed Moataz** — CS student, full-stack & AI engineer.
+Personal portfolio website and professional documents for **Mohamed Moataz** — CS student, full-stack & AI engineer.
 
-## Structure
+## Files
 
-```
-portfolio/
-├── website/          # Portfolio website (HTML/CSS/JS)
-│   ├── index.html
-│   ├── style.css
-│   └── script.js
-└── documents/        # Professional documents
-    ├── resume.html
-    ├── cv.html
-    └── cover-letter.html
-```
-
-## Website
-
-A dark-themed portfolio showcasing projects, skills, and experience.
-
-## Documents
-
-- **Resume** — One-page professional summary
-- **CV** — Full academic and professional curriculum vitae  
-- **Cover Letter** — Template cover letter
+- `index.html` — Portfolio website
+- `style.css` — Stylesheet
+- `script.js` — Scripts
+- `resume.html` — Resume
+- `cv.html` — Full CV
+- `cover-letter.html` — Cover letter
